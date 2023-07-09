@@ -30,8 +30,8 @@ const App = () => {
   }, [query]);
 
   return (
-    <div className="container pt-5 flex items-center justify-center flex-col gap-5 bg-white rounded-xl p-5 text-sm max-h-[550px] h-full">
-      <div className="flex items-center gap-2">
+    <div className="container flex items-center justify-center flex-col gap-4 bg-white rounded-xl text-sm md:max-h-[550px] h-full">
+      <div className="flex items-center gap-2 py-5">
         <input
           value={query}
           onChange={(event) => {
@@ -51,11 +51,11 @@ const App = () => {
         <div>loading</div>
       ) : (
         characters.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {characters.map(({ id, name, image }) => (
-              <div key={id} className="text-sm truncate text-start">
-                {name}
+              <div key={id}>
                 <img className="w-20 h-20" src={image} alt={name} />
+                {name}
               </div>
             ))}
           </div>
