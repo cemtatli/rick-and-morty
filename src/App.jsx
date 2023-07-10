@@ -30,15 +30,22 @@ const App = () => {
   }, [query]);
 
   return (
-    <div className="container relative flex ring-2 ring-offset-gray-100 ring-opacity-25 ring-offset-4 ring-gray-400 z-10 items-center justify-center flex-col gap-4 p-4 md:p-0 bg-white rounded-xl text-sm md:max-h-[700px] h-full">
-      <div className="flex items-center gap-4 py-5 md:py-2.5 md:fixed md:top-10 bg-white px-5 rounded-full md:ring-2 md:ring-offset-gray-100 md:ring-opacity-25 md:ring-offset-4 md:ring-gray-400">
+    <div className="container relative flex ring-2 ring-offset-gray-100 ring-opacity-25 ring-offset-[20px] ring-gray-400 z-10 items-center justify-center flex-col gap-4 p-4 xl:p-0 bg-white rounded-xl text-sm xl:max-h-[700px] h-full xl:after:absolute xl:after:bottom-4 shadow-md xl:after:left-1/2 xl:after:w-40 xl:after:h-2.5 xl:after:bg-gray-300 after:rounded-full xl:after:transform xl:after:-translate-x-1/2">
+      {error && (
+        <div className="font-medium">
+          <button onClick={() => setQuery("")} className="hover:underline">
+            {error}
+          </button>
+        </div>
+      )}
+      <div className="flex items-center gap-4 py-5 xl:py-2.5 xl:fixed xl:top-10 bg-white px-5 rounded-full xl:ring-2 xl:ring-offset-gray-100 xl:ring-opacity-25 xl:ring-offset-4 xl:ring-gray-400">
         <input
           value={query}
           onChange={(event) => {
             setQuery(event.target.value);
           }}
           placeholder="Arama yapın."
-          className="outline-none border rounded-md border-gray-300 px-2 py-1"
+          className="outline-none border rounded-xl border-gray-300 px-2 py-1"
         />
         <button
           onClick={() => setQuery("")}
