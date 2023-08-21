@@ -7,6 +7,6 @@
 html,
 body,
 #root {
-  @apply antialiased h-full w-full bg-gray-200 grid place-items-center;
+  @apply antialiased h-screen w-full bg-gray-200/80 grid place-items-center;
   font-family: "Inter", sans-serif;
 }
